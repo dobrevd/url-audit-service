@@ -1,0 +1,15 @@
+audit:
+  kafka:
+    topic: url-shortener-event-topic
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092, localhost:9094
+      auto-offset-reset: earliest
+      group-id: url-events-consumer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages:faang.school.urlshortenerservice
