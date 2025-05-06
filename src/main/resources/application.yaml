@@ -12,4 +12,8 @@ spring:
         spring:
           json:
             trusted:
-              packages:faang.school.urlshortenerservice
+              packages: faang.school.urlshortenerservice
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/auditdatabase
