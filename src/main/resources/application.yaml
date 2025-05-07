@@ -16,4 +16,4 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/auditdatabase
+      uri: mongodb://audit-mongodb:27017/auditdatabase
