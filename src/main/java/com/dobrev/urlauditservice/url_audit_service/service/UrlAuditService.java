@@ -4,9 +4,9 @@ import com.dobrev.urlauditservice.url_audit_service.handler.UrlEvent;
 import com.dobrev.urlauditservice.url_audit_service.repository.UrlEventRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -21,8 +21,8 @@ public class UrlAuditService {
         return savedEvent;
     }
 
-    public List<UrlEvent> findAll() {
-        var all = urlEventRepository.findAll();
+    public Page<UrlEvent> findAll(Pageable pageable) {
+        var all = urlEventRepository.findAll(pageable);
         log.info("All events are found");
 
         return all;
