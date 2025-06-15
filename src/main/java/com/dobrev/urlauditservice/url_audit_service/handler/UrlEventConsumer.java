@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@KafkaListener(topics = "${audit.kafka.topic}", groupId = "url-events-consumer")
+@KafkaListener(topics = "${audit.kafka.topic}", groupId = "${audit.kafka.consumer.group-id}")
 @Slf4j
 public class UrlEventConsumer {
     private final UrlAuditService urlAuditService;
