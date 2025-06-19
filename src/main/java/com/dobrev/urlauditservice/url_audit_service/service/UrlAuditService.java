@@ -19,10 +19,14 @@ import java.util.List;
 public class UrlAuditService {
     private final UrlEventRepository urlEventRepository;
 
-    public UrlEvent save(UrlEvent event) {
-        var savedEvent = urlEventRepository.save(event);
+    public void save(UrlEvent event) {
+        urlEventRepository.save(event);
         log.info("Event with id: {} is saved ", event.eventId());
+    }
 
+    public List<UrlEvent> saveAllEvents(List<UrlEvent> event) {
+        var savedEvent = urlEventRepository.saveAll(event);
+        log.info("Events are saved");
         return savedEvent;
     }
 

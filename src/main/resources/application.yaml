@@ -1,15 +1,15 @@
 audit:
   kafka:
-    topic: ${AUDIT_KAFKA_TOPIC}
+    topic: url-shortener-event-topic
     consumer:
-      group-id: ${AUDIT_KAFKA_GROUP_ID}
+      group-id: url-events-consumer
 
 spring:
   kafka:
-    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+    bootstrap-servers: kafka-1:9092,kafka-2:9092,kafka-3:9092
 
   data:
     mongodb:
-      uri: ${SPRING_DATA_MONGODB_URI}
+      uri: mongodb://localhost:27017/auditdatabase
       mapping:
-        strict: ${SPRING_DATA_MONGODB_MAPPING_STRICT}
+        strict: false

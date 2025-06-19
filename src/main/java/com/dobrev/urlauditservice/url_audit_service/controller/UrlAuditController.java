@@ -26,8 +26,8 @@ public class UrlAuditController {
     private final UrlAuditService urlAuditService;
 
     @PostMapping
-    public UrlEvent saveEvent(@RequestBody UrlEvent urlEvent) {
-        return urlAuditService.save(urlEvent);
+    public List<UrlEvent> saveEvents(@RequestBody List<UrlEvent> urlEvent) {
+        return urlAuditService.saveAllEvents(urlEvent);
     }
 
     @GetMapping
@@ -42,7 +42,7 @@ public class UrlAuditController {
 
     @GetMapping("/user/{userId}/events")
     public List<UrlEvent> findAllResolveEventByUserIdAndDate(@PathVariable long userId,
-                                                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+                                                             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return urlAuditService.findAllResolveEventByUserIdAndDate(userId, date);
     }
 }

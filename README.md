@@ -19,6 +19,18 @@ This microservice:
 - Provides REST API endpoints to serve data to the frontend
 - Supports **pagination** for efficient data retrieval
 
+#### 1. **Fetch All Data**
+
+- Retrieves a complete list of all events from the server.
+- **Pagination** support with options to display **5 (default)**.
+
+#### 2. **Fetch Data by User and Date**
+
+- Retrieves clicks/resolve events only based on:
+    - A specific **User ID**
+    - A specific **Date**
+- Useful for detailed inspection of a user's activity on a given day.
+
 ## GitHub Actions Workflow
 
 ### 📌 Overview
@@ -49,5 +61,3 @@ This workflow ensures **continuous integration and deployment**, making the appl
 ## 🧪 Code Coverage with JaCoCo
 
 _**In development**_
-
-
